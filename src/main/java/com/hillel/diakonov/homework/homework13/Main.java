@@ -24,14 +24,13 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
-        String type = null;
-        String stop = "Stop";
+        String type = "";
+        String stop = "STOP";
 
         try {
             do {
                 type = scanner.next();
                 DrinksMachine drinksMachine = DrinksMachine.valueOf(type.toUpperCase());
-                boolean ok = false;
 
                 switch (drinksMachine) {
                     case COFFEE: {
@@ -66,12 +65,12 @@ public class Main {
                     }
                 }
 
-                new DrinksCount();
+                new Drinks();
 
             } while (true);
         } catch (IllegalArgumentException e) {
-            if (Objects.equals(type, stop)) {
-                System.out.println("Thank you! From you " + sum + " hryvnia. You ordered " + DrinksCount.counter + " drinks.");
+            if (Objects.equals(type.toUpperCase(), stop)) {
+                System.out.println("Thank you! From you " + sum + " hryvnia. You ordered " + Drinks.counter + " drinks.");
             } else{
                 System.out.println("We don't have this on the menu.");
             }

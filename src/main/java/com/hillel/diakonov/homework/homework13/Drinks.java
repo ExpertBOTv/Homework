@@ -7,4 +7,9 @@ public class Drinks {
     public static final int MojitoPrice = 60;
     public static final int MineralWaterPrice = 18;
     public static final int CocaColaPrice = 34;
+    public static int counter = 0;
+
+    public Drinks() {
+        counter++;
+    }
 }
